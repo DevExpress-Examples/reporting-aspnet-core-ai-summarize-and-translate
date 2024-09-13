@@ -5,10 +5,12 @@
 <!-- default badges end -->
 # Reporting for ASP.NET Core - Integrate AI-powered Summarize and Translate Features based on Azure OpenAI
 
-This example adds two new buttons that help users to summarize and translate a report content in the JavaScript Document Viewer with AI-powered functionality:
+This example extends the DevExpress JavaScript Report Viewer with AI-based capabilities. These capabilities are available in UI via two buttons that access the report document and process its content as follows:
 
-- **Summarize**: When you click this button, Generative AI summaries generate content that helps you quickly understand/analyze core insights associated with a given report.
-- **Translate**: This button helps you translate report documents, chosen pages, or selected content to a desired language with AI-powered translation tools.
+- **Summarize**: Uses generative AI to summarize report content and help you quickly review core insights associated with this report.
+- **Translate**: Uses AI services to translate report content to another language.
+
+The following image shows the application's interface. As you can see, users can process the entire document, individual pages, or selected content. 
 
 ![AI-Powered Summarize and Translate Buttons](web-reporting-ai-enhancements.png)
 
@@ -18,13 +20,13 @@ This example adds two new buttons that help users to summarize and translate a r
 
 Add the following NuGet packages:
 - `DevExpress.AIIntegration.AspNetCore.Reporting`
-- `DevExpress.AIIntegration.Azure.OpenAI` or `DevExpress.AIIntegration.OpenAI` based on your AI service preferences.
+- `DevExpress.AIIntegration.Azure.OpenAI` or `DevExpress.AIIntegration.OpenAI` based on your AI service preferences. This project uses Azure OpenAI. The remainder of this document describes steps related to this package.  
 
 ### Add Personal Keys
 
-You need to create an Azure OpenAI resource in the Azure portal to use AI Assistants for DevExpress Reporting. Refer to the following help topic for details: [Microsoft - Create and deploy an Azure OpenAI Service resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
+To use AI Assistants in your applications, you need to create an Azure OpenAI resource in the Azure portal . Refer to the following help topic for details: [Microsoft - Create and deploy an Azure OpenAI Service resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
 
-Once you obtain a private endpoint and an API key, open [appsettings.json](./CS/BlazorReportViewer/appsettings.json) and add `DeploymentName`, `AzureOpenAIKey`, and `AzureOpenAIEndpoint` values to the fields below (`DeploymentName` is a name of your Azure model, for example, `GPT4o`):
+Once you obtain a private endpoint and an API key, open [appsettings.json](./CS/JSDocumentViewer/appsettings.json) and specify `DeploymentName`, `AzureOpenAIKey`, and `AzureOpenAIEndpoint` values. Note that `DeploymentName` is  set to `GPT4o`, but you can specify a different model:
 
 ```json
 "AISettings": {
@@ -72,7 +74,7 @@ var app = builder.Build();
 
 ### Register AI Services on the Client
 
-Open `DocumentViewer.cshtml` and create the JavaScript function that enables AI services and add languages. Call this function on the Document Viewer's [OnInitializing](https://docs.devexpress.devx/XtraReports/DevExpress.AspNetCore.Reporting.WebDocumentViewer.WebDocumentViewerClientSideEventsBuilderBase-2.OnInitializing(System.String)) event:
+Open `DocumentViewer.cshtml` and create a JavaScript function that enables AI services and populates a language list. Call this function on the Document Viewer's [OnInitializing](https://docs.devexpress.devx/XtraReports/DevExpress.AspNetCore.Reporting.WebDocumentViewer.WebDocumentViewerClientSideEventsBuilderBase-2.OnInitializing(System.String)) event:
 
 ```js
 <script>
