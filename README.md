@@ -6,10 +6,7 @@
 <!-- default badges end -->
 # Reporting for ASP.NET Core - Integrate AI-powered Summarize and Translate Features based on Azure OpenAI
 
-This example adds two new buttons that help users to summarize and translate a report content with AI-powered functionality:
-
-- **Summarize**: When you click this button, Generative AI summaries generate content that helps users quickly understand/analyze core insights associated with a given report.
-- **Translate**: This button helps users translate report documents, chosen pages, or selected content to a desired language with AI-powered translation tools.
+Description
 
 
 ## Files to Review
