@@ -103,7 +103,7 @@ Open `DocumentViewer.cshtml` and create a JavaScript function that enables AI se
 - [Program.cs](./CS/JSDocumentViewer/Program.cs)
 - [AISettings.cs](./CS/JSDocumentViewer/Models/AISettings.cs)
 - [appsettings.json](./CS/JSDocumentViewer/appsettings.json)
-- [DocumentViewer.cshtml](./CS/Views/Home/DocumentViewer.cshtml)
+- [DocumentViewer.cshtml](./CS/JSDocumentViewer/Views/Home/DocumentViewer.cshtml)
 
 ## More Examples
 
