@@ -4,14 +4,14 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# Reporting for ASP.NET Core - Integrate AI-powered Summarize and Translate Features based on Azure OpenAI
+# Reporting for ASP.NET Core -  Summarize and Translate DevExpress Reports Using Azure OpenAI
 
-This example extends the DevExpress JavaScript Report Viewer with AI-based capabilities. These capabilities are available in UI via two buttons that access the report document and process its content as follows:
+This example adds AI-powered summarize/translate capabilities to the DevExpress JavaScript Report Viewer. These enterprise-ready features are available within the user interface via two buttons designed to access the document and process report content as follows: 
 
-- **Summarize**: Uses generative AI to summarize report content and help you quickly review core insights associated with this report.
-- **Translate**: Uses AI services to translate report content to another language.
+- **Summarize**: Uses generative AI to summarize report content and displays core insights associated with this report. 
+- **Translate**: Uses AI services to translate report content to a different language. 
 
-The following image shows the application's interface. As you can see, users can process the entire document, individual pages, or selected content. 
+The following is an image of the application interface. As you can see, users can process the entire document, individual pages, or selected content. 
 
 ![AI-Powered Summarize and Translate Buttons](web-reporting-ai-enhancements.png)
 
@@ -25,9 +25,9 @@ Add the following NuGet packages:
 
 ### Add Personal Keys
 
-To use AI Assistants in your applications, you need to create an Azure OpenAI resource in the Azure portal . Refer to the following help topic for details: [Microsoft - Create and deploy an Azure OpenAI Service resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
+To use AI Assistants in your application, you must create an Azure OpenAI resource in the Azure portal. Refer to the following help topic for additional information/guidance: [Microsoft - Create and deploy an Azure OpenAI Service resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
 
-Once you obtain a private endpoint and an API key, open [appsettings.json](./CS/JSDocumentViewer/appsettings.json) and specify `DeploymentName`, `AzureOpenAIKey`, and `AzureOpenAIEndpoint` values. Note that `DeploymentName` is  set to `GPT4o`, but you can specify a different model:
+Once you obtain a private endpoint and an API key, open [appsettings.json](./CS/JSDocumentViewer/appsettings.json) and specify appropriate `DeploymentName`, `AzureOpenAIKey`, and `AzureOpenAIEndpoint` values. Note that `DeploymentName` is set to `GPT4o`, but you can specify a different model as requirements dictate: 
 
 ```json
 "AISettings": {
@@ -37,7 +37,7 @@ Once you obtain a private endpoint and an API key, open [appsettings.json](./CS/
 }
 ``` 
 
-Create a class that helps you read these settings:
+Create a class to read these settings:
 
 ```cs
 public class AISettings {
