@@ -6,7 +6,7 @@
 <!-- default badges end -->
 # Reporting for ASP.NET Core -  Summarize and Translate DevExpress Reports Using Azure OpenAI
 
-This example adds AI-powered summarize/translate capabilities to the DevExpress JavaScript Report Viewer. These enterprise-ready features are available within the user interface via two buttons designed to access the document and process report content as follows: 
+This example adds AI-powered summarize/translate capabilities to the DevExpress JavaScript-based Document Viewer. These enterprise-ready features are available within the user interface via two buttons designed to access the document and process report content as follows: 
 
 - **Summarize**: Uses generative AI to summarize report content and displays core insights associated with this report. 
 - **Translate**: Uses AI services to translate report content to a different language. 
