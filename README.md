@@ -11,6 +11,14 @@ This example adds AI-powered summarize/translate capabilities to the DevExpress 
 - **Summarize**: Uses generative AI to summarize report content and displays core insights associated with this report. 
 - **Translate**: Uses AI services to translate report content to a different language. 
 
+
+> [!NOTE]
+> To run this project with an Early Access Preview build (EAP), install npm packages:
+>
+> ```
+>	npm install --legacy-peer-deps
+> ```
+
 The following is an image of the application interface. As you can see, users can process the entire document, individual pages, or selected content. 
 
 ![AI-Powered Summarize and Translate Buttons](web-reporting-ai-enhancements.png)
